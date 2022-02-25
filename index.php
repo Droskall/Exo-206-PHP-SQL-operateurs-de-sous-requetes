@@ -60,6 +60,10 @@ try {
             WHERE id = ANY (SELECT user_fk FROM article HAVING count(user_fk) >= 2)
 ");
 
+    /*
+     * HAVING utilise des fonctions telles que SUM(), COUNT(), AVG(), MIN() ou MAX().
+     */
+
     $request->execute();
     echo '<pre>';
     print_r($request->fetchAll());
